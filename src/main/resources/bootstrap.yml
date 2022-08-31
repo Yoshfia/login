@@ -1,0 +1,32 @@
+jwt.secret : javainuse
+server.port : 8081
+spring:
+  application.name: LoginManagementService
+  cloud:
+    config:
+      name: microservices-config
+      uri: http://localhost:8888/
+      username: config_user
+      password: config_user
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+  profiles:
+    active: DEV
+  datasource:
+    url: jdbc:mysql://localhost:3306/login
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8089/eureka
